@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-  <a href="javascript:alert(1)">
-    <text x="20" y="20">Click me</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50">
+  <!-- Прозрачная кликабельная область -->
+  <a href="javascript:alert('Hacked!')">
+    <rect width="100%" height="100%" fill="transparent"/>
+    <text x="50%" y="50%" text-anchor="middle" fill="black">Click me</text>
   </a>
 </svg>
