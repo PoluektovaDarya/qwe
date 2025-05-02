@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50">
   <style>
     .secret-btn { cursor: pointer; }
-    .secret-btn:hover { opacity: 0.9; }
+    .secret-btn:hover { opacity: 0.1; }
   </style>
   <a href="javascript:alert('Hacked!')" class="secret-btn">
     <rect width="100" height="50" fill="gold"/>
