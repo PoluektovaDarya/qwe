@@ -37,7 +37,7 @@
       <animateTransform attributeName="transform" type="rotate" values="0 350 150; -20 350 150; 10 350 150; 0 350 150" dur="1.2s" repeatCount="indefinite" />
     </line>
     <!-- Меч -->
-    <line x1="300" y1="130" x2="270" y1="100" stroke="silver" stroke-width="5" id="sword2">
+    <line x1="300" y1="130" x2="270" y2="100" stroke="silver" stroke-width="5" id="sword2">
       <animateTransform attributeName="transform" type="rotate" values="0 300 130; -15 300 130; 5 300 130; 0 300 130" dur="1s" repeatCount="indefinite" />
     </line>
   </g>
