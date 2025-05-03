@@ -1,8 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
-  <rect x="10" y="10" width="50" height="50" fill="blue">
-    <!-- Изменение цвета -->
-    <animate attributeName="fill" values="blue;red;blue" dur="3s" repeatCount="indefinite"/>
-    <!-- Движение вправо -->
-    <animate attributeName="x" values="10;150;10" dur="5s" repeatCount="indefinite"/>
-  </rect>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="500" height="300">
+  <!-- Фон -->
+  <rect x="0" y="0" width="500" height="300" fill="#222" />
+  
+  <!-- Первый человечек (левый) -->
+  <g id="warrior1">
+    <!-- Тело -->
+    <circle cx="150" cy="150" r="20" fill="lightblue" id="body1" />
+    <!-- Голова -->
+    <circle cx="150" cy="120" r="15" fill="peachpuff" id="head1" />
+    <!-- Ноги -->
+    <line x1="140" y1="170" x2="130" y2="200" stroke="black" stroke-width="3" id="leg1-1" />
+    <line x1="160" y1="170" x2="170" y2="200" stroke="black" stroke-width="3" id="leg1-2" />
+    <!-- Руки -->
+    <line x1="130" y1="140" x2="100" y2="130" stroke="black" stroke-width="3" id="arm1-1">
+      <animateTransform attributeName="transform" type="rotate" values="0 150 150; 30 150 150; 0 150 150" dur="1s" repeatCount="indefinite" />
+    </line>
+    <line x1="170" y1="140" x2="180" y2="110" stroke="black" stroke-width="3" id="arm1-2" />
+    <!-- Меч -->
+    <line x1="180" y1="110" x2="180" y2="80" stroke="silver" stroke-width="5" id="sword1">
+      <animateTransform attributeName="transform" type="rotate" values="0 180 110; 10 180 110; -5 180 110; 0 180 110" dur="0.8s" repeatCount="indefinite" />
+    </line>
+  </g>
+  
+  <!-- Второй человечек (правый) -->
+  <g id="warrior2">
+    <!-- Тело -->
+    <circle cx="350" cy="150" r="20" fill="lightcoral" id="body2" />
+    <!-- Голова -->
+    <circle cx="350" cy="120" r="15" fill="peachpuff" id="head2" />
+    <!-- Ноги -->
+    <line x1="340" y1="170" x2="330" y2="200" stroke="black" stroke-width="3" id="leg2-1" />
+    <line x1="360" y1="170" x2="370" y2="200" stroke="black" stroke-width="3" id="leg2-2" />
+    <!-- Руки -->
+    <line x1="330" y1="140" x2="300" y2="130" stroke="black" stroke-width="3" id="arm2-1" />
+    <line x1="370" y1="140" x2="400" y2="150" stroke="black" stroke-width="3" id="arm2-2">
+      <animateTransform attributeName="transform" type="rotate" values="0 350 150; -20 350 150; 10 350 150; 0 350 150" dur="1.2s" repeatCount="indefinite" />
+    </line>
+    <!-- Меч -->
+    <line x1="300" y1="130" x2="270" y1="100" stroke="silver" stroke-width="5" id="sword2">
+      <animateTransform attributeName="transform" type="rotate" values="0 300 130; -15 300 130; 5 300 130; 0 300 130" dur="1s" repeatCount="indefinite" />
+    </line>
+  </g>
+  
+  <!-- Столкновение мечей (искры) -->
+  <g id="sparks">
+    <circle cx="250" cy="100" r="3" fill="yellow">
+      <animate attributeName="cx" values="250;245;255;250" dur="0.2s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="100;95;105;100" dur="0.3s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;5;2;3" dur="0.4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0.5;0.8;1" dur="0.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="255" cy="105" r="2" fill="orange">
+      <animate attributeName="cx" values="255;260;250;255" dur="0.3s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="105;110;100;105" dur="0.2s" repeatCount="indefinite" />
+      <animate attributeName="r" values="2;4;1;2" dur="0.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0.3;1;0.8" dur="0.4s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Анимация движения человечков (отскок после удара) -->
+  <animateTransform 
+    xlink:href="#warrior1"
+    attributeName="transform"
+    type="translate"
+    values="0,0; 10,0; -5,0; 0,0"
+    dur="2s"
+    repeatCount="indefinite"
+  />
+  
+  <animateTransform 
+    xlink:href="#warrior2"
+    attributeName="transform"
+    type="translate"
+    values="0,0; -10,0; 5,0; 0,0"
+    dur="2s"
+    repeatCount="indefinite"
+  />
 </svg>
